@@ -1,0 +1,11 @@
+<h1>Sign Up</h1>
+
+<form id="sign-up" method="post" action="/sessions">
+  <fieldset>
+    <label class="label" for="email">Email</label>
+    <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>">
+    <label class="label" for="password">Password</label>
+    <input type="password" name="password" placeholder="6 or more characters">
+    <input type="submit" value="Sign In">
+  </fieldset>
+</form>

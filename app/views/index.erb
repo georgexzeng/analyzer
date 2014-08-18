@@ -1,23 +1,11 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world. Whoops!</p>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
-</div>
+<% if current_user %>
+  <h1>Hello <%= get_user_name %>, what website would you like to analyze? </h1>
+<% else %>
+  <h1>Choose a website to analyze! </h1>
+<% end %>
+
+<form name="analyzer" id="analzyer" action="result/show" method="post">
+  <input type="text" name="search_term" placeholder="Website to search" required>
+  <input type="submit" value="Search">
+</form>
